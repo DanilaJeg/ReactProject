@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 function SingleDegree() {
     const { shortcode } = useParams();
-    const [degree, setDegree] = useState([]);
+    const [degree, setDegree] = useState(null);
     const [cohorts, setCohorts] = useState([]);
 
     useEffect(() => {
@@ -19,12 +19,18 @@ function SingleDegree() {
             .catch((error) => console.error('Error fetching data:', error));
     }, [shortcode]);
 
+    if (!degree) {
+        return <p>Loading...</p>
+    }
+    
     return (
         <div>
         <h1>{degree.full_name} Cohorts</h1>
         <ul>
             {cohorts.map((cohort) => (
-            <li key={cohort.id}>{cohort.id}</li>
+            <li key={cohort.id}>
+                <Link to={`/cohort/${cohort.id}`}>{cohort.id}</Link>
+            </li>
             ))}
         </ul>
         </div>

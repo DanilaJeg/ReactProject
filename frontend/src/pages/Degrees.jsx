@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import DeleteDegree from '../components/DeleteDegree';
 
 function Degrees() {
     const [degrees, setDegrees] = useState([]);
@@ -22,6 +23,8 @@ function Degrees() {
                     </li>
                     ))}
             </ul>
+            <Link to={`/degree/create`}>Click Here to create a new degree.</Link>
+        <DeleteDegree />
         </div>
     );
 }
