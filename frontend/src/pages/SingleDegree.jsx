@@ -17,7 +17,7 @@ function SingleDegree() {
             .then((response) => response.json())
             .then(data => setCohorts(data))
             .catch((error) => console.error('Error fetching data:', error));
-    }, [shortcode]);
+    }, []);
 
     if (!degree) {
         return <p>Loading...</p>

@@ -62,7 +62,7 @@ function CreateDegree() {
                         required
                     />
                 </div>
-                <button type="submit">Create Degree</button>
+                <button type="submit" disabled={!shortcode || !fullName}>Create Degree</button>
             </form>
             {message && <p>{message}</p>}
         </div>

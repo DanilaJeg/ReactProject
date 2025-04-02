@@ -8,7 +8,7 @@ function Degrees() {
     useEffect(() => {
         fetch('http://127.0.0.1:8000/api/degree/')
             .then((response) => response.json())
-            .then(data => setDegrees(data))
+            .then((data) => setDegrees(data))
             .catch((error) => console.error('Error fetching data:', error));
     }, []);
 
