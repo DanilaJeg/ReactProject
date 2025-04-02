@@ -14,6 +14,9 @@ import Modules from "./pages/Modules.jsx";
 import SingleModule from "./pages/SingleModule.jsx";
 import ModuleStudents from "./pages/ModuleStudent.jsx";
 import CreateModule from "./pages/CreateModule.jsx";
+import Students from "./pages/Students.jsx";
+import CreateStudent from "./pages/CreateStudent.jsx";
+import SetGrades from "./pages/SetGrade.jsx";
 
 function App() {
   return (
@@ -31,8 +34,11 @@ function App() {
         <Route path="/cohort/create" element={<CreateCohort />} />
         <Route path="/module" element={<Modules />} />
         <Route path="/module/:code" element={<SingleModule />} />
-        <Route path="module/:moduleCode/student" element={<ModuleStudents />} />
-        <Route path="module/create" element={< CreateModule />} />
+        <Route path="/module/:moduleCode/student" element={<ModuleStudents />} />
+        <Route path="/module/create" element={< CreateModule />} />
+        <Route path="/student" element={<Students />}/>
+        <Route path="/student/create" element={<CreateStudent />}/>
+        <Route path="/student/:studentID/grade" element={<SetGrades />}/>
       </Routes>
     </Router>
   );

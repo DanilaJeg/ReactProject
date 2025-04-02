@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function ModuleStudent() {
     const [students, setStudents] = useState([]);
@@ -80,7 +80,7 @@ function ModuleStudent() {
             <ul>
                 {students.map((student) => (
                     <li key={student.student_id}>
-                        {student.first_name} {student.last_name} ({student.email})
+                        <Link to={`/student/${student.student_id}`}>{student.student_id}</Link> - {student.first_name} {student.last_name} ({student.email})
                     </li>
                 ))}
             </ul>

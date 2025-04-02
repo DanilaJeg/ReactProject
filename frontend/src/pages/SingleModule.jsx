@@ -17,8 +17,6 @@ function SingleModule() {
         return <p>Loading...</p>
     }
 
-    console.log(module)
-
     return (
         <div>
             <h1>{module.code}</h1>
