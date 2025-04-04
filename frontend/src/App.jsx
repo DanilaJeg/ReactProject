@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx"
 import Home from "./pages/Home.jsx";
@@ -38,7 +39,7 @@ function App() {
         <Route path="/module/create" element={< CreateModule />} />
         <Route path="/student" element={<Students />}/>
         <Route path="/student/create" element={<CreateStudent />}/>
-        <Route path="/student/:studentID/grade" element={<SetGrades />}/>
+        <Route path="/student/:student_id/grade" element={<SetGrades />}/>
       </Routes>
     </Router>
   );
