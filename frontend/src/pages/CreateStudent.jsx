@@ -35,7 +35,7 @@ function CreateStudent() {
             first_name: first,
             last_name: last,
             cohort: `http://127.0.0.1:8000/api/cohort/${cohort}/`,
-            email,
+            email: `${first}.${last}@dcu.ie`
         }
 
         console.log(newStudent)
@@ -79,10 +79,6 @@ function CreateStudent() {
                 <input type="text" value={last} onChange={(e) => setLast(e.target.value)} required />
                 </label>
                 <br />
-                <label>Email:
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                </label>
-                <br />
                 <label>Cohort:
                 <select value={cohort} onChange={(e) => setCohort(e.target.value)} required>
                     <option value="">Select Cohort</option>
@@ -92,7 +88,7 @@ function CreateStudent() {
                 </select>
                 </label>
                 <br />
-                <button type="submit" disabled={!first || !last || !studentID || !email || !cohort }>Create Student</button>
+                <button type="submit" disabled={!first || !last || !studentID || !cohort }>Create Student</button>
             </form>
         </div>
     );

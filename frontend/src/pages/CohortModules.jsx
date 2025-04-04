@@ -16,7 +16,7 @@ function CohortModules() {
         fetch(`http://127.0.0.1:8000/api/cohort/${cohortID}/`)
             .then((response) => response.json())
             .then((data) => setCohort(data))
-            .catch((error) => console.log("Error fetching data:", ))
+            .catch((error) => console.log("Error fetching data:", error))
     }, []);
 
     if(!cohort) {
@@ -29,7 +29,7 @@ function CohortModules() {
             <ul>
                 {modules.map((module) => (
                     <li key={module.code}>
-                        <Link to={`/module/${module.code}`}>{module.code}</Link>: {module.full_name}
+                        <Link to={`/module/${module.code}`}>{module.code}</Link>: {module.full_name} {module.ca_split}
                     </li>
                 ))}
             </ul>

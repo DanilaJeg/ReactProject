@@ -31,7 +31,7 @@ function CreateCohort() {
         e.preventDefault();
 
         const newCohort = {
-            id,
+            id: `${degree}${year}`,
             year: parseInt(year, 10),
             degree: `http://127.0.0.1:8000/api/degree/${degree}/`,
         };
@@ -65,16 +65,6 @@ function CreateCohort() {
             <h2>Create Cohort</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Cohort ID: </label>
-                    <input 
-                        type="text" 
-                        value={id} 
-                        onChange={(e) => setID(e.target.value)}
-                        placeholder="COMSCI1" 
-                        required 
-                    />
-                </div>
-                <div>
                     <label>Year: </label>
                     <input 
                         type="number" 
@@ -101,7 +91,7 @@ function CreateCohort() {
                         ))}
                     </select>
                 </div>
-                <button type="submit" disabled={!id || !year || !degree}>Create</button>
+                <button type="submit" disabled={!year || !degree}>Create</button>
             </form>
             {message && <p>{message}</p>}
         </div>
